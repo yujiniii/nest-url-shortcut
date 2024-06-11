@@ -1,73 +1,36 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+## 개요
+[가상 면접 사례로 배우는 대규모 시스템 설계 기초](https://www.yes24.com/Product/Goods/124138645) 를 읽고, **8장 URL 단축키 설계** 를 직접 구현해본 예제입니다.    
+NestJS를 사용하였고, DB는 실물 엑셀 파일으로 갈음하였습니다.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
+### 앱 실행
 ```bash
 $ yarn install
-```
-
-## Running the app
-
-```bash
-# development
 $ yarn run start
-
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
 ```
 
-## Test
+## 프로젝트 상세
+> 이 프로젝트는 `http://localhost:3000/short/:key`으로 접속했을 때, key 값에 따라 원래 url 로 이동하게끔 작성되었습니다.
+  
+![스크린샷 2024-06-11 오후 6 10 16](https://github.com/yujiniii/nest-url-shortcut/assets/50348197/fb9a7805-9c46-44d4-b11c-fe68afb5693c)
+
+### short url 발급
 
 ```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
+curl -XGET 'http://localhost:3000/test?url={원하는 주소}'
 ```
 
-## Support
+또는 주소창에 `http://localhost:3000/test?={원하는 주소}` 를 입력하면 2가지 방식으로 발행한 short url을 확인할 수 있습니다. 
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+![스크린샷 2024-06-11 오후 5 17 38](https://github.com/yujiniii/nest-url-shortcut/assets/50348197/8769ec4e-1804-4245-b5b6-9fe35a7d9682)
 
-## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### short url 사용
+아까 발급된 키가 만약 `ufnlUnx` 이라면, `http://localhost:3000/short/ufnlUnx` 을 주소에 입력합니다.   
+( 같은 주소를 바라보는 2개의 short url을 만들었기 때문에, `64b5f8ve3v6w` 도 동일하게 적용됩니다)  
 
-## License
+![스크린샷 2024-06-11 오후 5 18 01](https://github.com/yujiniii/nest-url-shortcut/assets/50348197/826e1a47-49b0-4161-9a37-dc79722a9559)
 
-Nest is [MIT licensed](LICENSE).
+
+원하는 주소로 잘 redirect 된 것을 확인할 수 있습니다. 
+
+![스크린샷 2024-06-11 오후 5 18 06](https://github.com/yujiniii/nest-url-shortcut/assets/50348197/5408c42b-1462-4d87-8441-78a36dad5eb1)
