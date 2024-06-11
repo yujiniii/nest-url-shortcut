@@ -11,8 +11,9 @@ $ yarn run start
 
 ## 프로젝트 상세
 > 이 프로젝트는 `http://localhost:3000/short/:key`으로 접속했을 때, key 값에 따라 원래 url 로 이동하게끔 작성되었습니다.
-  
-![스크린샷 2024-06-11 오후 6 10 16](https://github.com/yujiniii/nest-url-shortcut/assets/50348197/fb9a7805-9c46-44d4-b11c-fe68afb5693c)
+
+![스크린샷 2024-06-11 오후 6 18 24](https://github.com/yujiniii/nest-url-shortcut/assets/50348197/e49156e0-c29a-4755-9a9d-dece64c73e0a)
+
 
 ### short url 발급
 
