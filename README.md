@@ -12,18 +12,19 @@ $ yarn run start
 ## 프로젝트 상세
 > 이 프로젝트는 `http://localhost:3000/short/:key`으로 접속했을 때, key 값에 따라 원래 url 로 이동하게끔 작성되었습니다.
 
-![스크린샷 2024-06-11 오후 6 18 24](https://github.com/yujiniii/nest-url-shortcut/assets/50348197/e49156e0-c29a-4755-9a9d-dece64c73e0a)
+![스크린샷 2024-06-11 오후 7 29 59](https://github.com/yujiniii/nest-url-shortcut/assets/50348197/954e9520-951d-4d95-ae3d-61c94960ce7f)
 
 
 ### short url 발급
 
 ```bash
-curl -XGET 'http://localhost:3000/test?url={원하는 주소}'
+$ curl --location 'localhost:3000/short' \
+--header 'Content-Type: application/json' \
+--data '{
+    "url":"http://localhost:3000/real/testtest-4" # 단축을 원하는 url 입력
+}'
 ```
-
-또는 주소창에 `http://localhost:3000/test?={원하는 주소}` 를 입력하면 2가지 방식으로 발행한 short url을 확인할 수 있습니다. 
-
-![스크린샷 2024-06-11 오후 5 17 38](https://github.com/yujiniii/nest-url-shortcut/assets/50348197/8769ec4e-1804-4245-b5b6-9fe35a7d9682)
+<img width="855" alt="스크린샷 2024-06-11 오후 7 28 26" src="https://github.com/yujiniii/nest-url-shortcut/assets/50348197/e6c2b2e7-f884-4bbc-85d3-b07c0dc0f143">
 
 
 ### short url 사용
